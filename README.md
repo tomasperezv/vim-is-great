@@ -14,6 +14,19 @@ sudo apt-get install -y curl cmake python-dev git
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 ```
 
+### Optional: Install `jshint` for `syntastic` checker
+
+```
+sudo npm install -g jshint
+```
+
+**Note:** If you want to use an alternative, you would need to modify in the `vimrc` file the `syntastic` section:
+
+```
+let g:syntastic_javascript_checkers = ['jshint']                                                                  
+let g:syntastic_javascript_jshint_args = '--config $PWD/vim/jshintrc'
+```
+
 ## Setup
 
 ### Via curl
