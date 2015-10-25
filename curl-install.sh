@@ -33,7 +33,7 @@ then
   done
 else
   echo "Generating $HOME/.vimrc"
-  ln -s $PWD/vimrc $HOME/.vimrc
+  ln -fs $PWD/vimrc $HOME/.vimrc
 fi
 
 if [ -e "$HOME/.vim" ]
@@ -57,5 +57,5 @@ then
   done
 else
   echo "Generating $HOME/.vim"
-  ln -s $PWD/vim $HOME/.vim
+  ln -fs $PWD/vim $HOME/.vim
 fi
