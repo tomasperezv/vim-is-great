@@ -1,12 +1,8 @@
 #!/bin/bash
 # -----------------------------------------------------------------------------
-# The following script initializes the vim setup.
+# The following script updates vimrc and vim files to references to the
+# vim-is-great project folder.
 # @see https://github.com/tomasperezv/vim-is-great
 # -----------------------------------------------------------------------------
-git submodule update --init --recursive
-cd vim/bundle/YouCompleteMe/
-./install.py
-cd -
-cd vim/bundle/tern_for_vim
-npm install
-cd -
+ln -s $(./vimrc) $HOME/.vimrc
+ln -s $(./vim) $HOME/vim
