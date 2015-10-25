@@ -1,6 +1,28 @@
 # vim-is-great
 
-My vim configuration
+My vim configuration a result of ~5 years of continuous iterations.
+
+It contains the following plugins:
+
+- https://github.com/scrooloose/syntastic.git                                                                  
+- https://github.com/scrooloose/nerdtree.git                                                                   
+- https://github.com/tpope/vim-surround.git                                                                    
+- https://github.com/Lokaltog/vim-distinguished.git                                                            
+- https://github.com/bling/vim-airline.git                                                                     
+- https://github.com/pangloss/vim-javascript.git                                                               
+- https://github.com/nathanaelkane/vim-indent-guides.git                                                       
+- https://github.com/jelera/vim-javascript-syntax.git                                                          
+- https://github.com/Raimondi/delimitMate.git                                                                  
+- https://github.com/tobyS/pdv.git                                                                             
+- https://github.com/tobyS/vmustache.git                                                                       
+- https://github.com/SirVer/ultisnips.git                                                                      
+- https://github.com/joonty/vdebug.git                                                                         
+- https://github.com/hhvm/vim-hack.git                                                                         
+- https://github.com/tpope/vim-fugitive.git                                                                    
+- https://github.com/moll/vim-node.git                                                                         
+- https://github.com/Valloric/YouCompleteMe.git                                                                
+- https://github.com/marijnh/tern_for_vim.git                                                                  
+- https://github.com/majutsushi/tagbar.git 
 
 ## Requirements
 
