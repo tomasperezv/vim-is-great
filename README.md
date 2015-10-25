@@ -16,14 +16,18 @@ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 
 ## Setup
 
+### Via curl
+
+```bash
+curl -sL https://raw.githubusercontent.com/tomasperezv/vim-is-great/master/curl-install.sh | bash -
+```
+
+### Manual install
+
 ```bash
 git clone git@github.com:tomasperezv/vim-is-great.git
 cd vim-is-great
 sh setup.sh
 ```
 
-**Note:** You need to update your `vimrc` and `vim` home files to a references to the `vim-is-great` ones. For that you can run `update-home-vim.sh`
-
-```bash
-sh update-home-vim.sh
-```
+**Note:** The script will ask you to overwrite the `$HOME/.vimrc` and `$HOME/vim` files in case they found it. They will be replaced by symbolic links to the project's folder in case you agree. Otherwise you would need to do it manually.
