@@ -6,8 +6,8 @@
 # -----------------------------------------------------------------------------
 
 ## Step 1: Clone the repo and setup
-#git clone git@github.com:tomasperezv/vim-is-great.git
-#cd $PWD/vim-is-great
+git clone git@github.com:tomasperezv/vim-is-great.git
+cd $PWD/vim-is-great
 #sh setup.sh
 
 ## Step 2: Update the .vimrc and .vim files
