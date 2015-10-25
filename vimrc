@@ -254,7 +254,7 @@ let g:syntastic_check_on_open=1
 
 " jshint
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_jshint_args = '--config $HOME/dev/configuration/home/jshintrc'
+let g:syntastic_javascript_jshint_args = '--config $PWD/vim/jshintrc'
 
 " ******************************************************************************
 " vim-javascript
