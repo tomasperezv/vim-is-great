@@ -253,10 +253,10 @@ snippet nserver
 	}).listen(${1:port});
 
 snippet nevents
-	// Extend MemcacheHandler to inherit EventEmitter interface
+	// Extend ${1:Object} to inherit EventEmitter interface
 	var EventEmitter = require('events').EventEmitter;
 	var util = require('util');
-	util.inherits(${1:Object}, EventEmitter);
+	util.inherits(${2:Object}, EventEmitter);
 
 snippet nignoreLine
 	// jshint ignore:line
