@@ -39,7 +39,7 @@ fi
 if [ -e "$HOME/.vim" ]
 then
   while true; do
-    read -p "$HOME/.vim found, do you want to overwrite it? [y/N]: " yn
+    read -p "$HOME/.vim found, do you want to overwrite it? [y/N]: " yn < /dev/tty
     case $yn in
       [Yy]* )
         echo "Back up $HOME/.vim to $HOME/.vim.bak"
