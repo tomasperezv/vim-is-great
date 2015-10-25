@@ -11,6 +11,7 @@ cd vim-is-great
 #sh setup.sh
 
 ## Step 2: Update the .vimrc and .vim files
+echo "$HOME/.vimrc"
 if [ -e "$HOME/.vimrc" ]
 then
   while true; do
