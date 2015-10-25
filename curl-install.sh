@@ -15,7 +15,7 @@ echo "$HOME/.vimrc"
 if [ -e "$HOME/.vimrc" ]
 then
   while true; do
-    read -p "$HOME/.vimrc found, do you want to overwrite it? [y/N]: " yn
+    read -p "$HOME/.vimrc found, do you want to overwrite it? [y/N]: " yn < /dev/tty
     case $yn in
       [Yy]* )
         echo "Back up $HOME/.vimrc to $HOME/.vimrc.bak"
