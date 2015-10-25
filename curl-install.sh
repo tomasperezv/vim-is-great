@@ -1,7 +1,6 @@
 #!/bin/bash
 # -----------------------------------------------------------------------------
-# The following script updates vimrc and vim home files to references to the
-# vim-is-great project folder.
+# The following script installs tomasperezv/vim-is-great configuration for vim.
 # @see https://github.com/tomasperezv/vim-is-great
 # -----------------------------------------------------------------------------
 
