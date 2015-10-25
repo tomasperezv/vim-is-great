@@ -230,6 +230,10 @@ snippet co
 	/**
 	 * @class ${1:object_name}
 	 */
+
+snippet console
+	console.log(${1:value});
+
 #############################################
 # Node.js
 #############################################
@@ -260,3 +264,75 @@ snippet nevents
 
 snippet nignoreLine
 	// jshint ignore:line
+
+snippet ntest
+	var expect = require('expect.js');
+	describe('${1:General description}', function(){
+	  it('${2:Use case}', function() {
+	    expect(${3:test}).to.be(null);
+	  });
+	});
+snippet ntest-exception
+	expect(function() {
+	  ${1:Call that throws exception}
+	}).to.throwException(function(e) {
+	  expect(e).to.be.an(${2:Exception type});
+	});
+
+snippet nrequest-get
+	var requestInterface = require('${1:http or https}');
+	var url = '${2:URL}';
+	requestInterface.request(url, function(response) {
+	  var data = '';
+	  response.on('data', function (chunk) {
+	    data += chunk;
+	  });
+	
+	  response.on('end', function () {
+	    ${3:Process the data}
+	  });
+	
+	}).end();
+
+snippet nrequest-post
+	var requestInterface = require('${1:http or https}');
+	var querystring = require('querystring');
+	
+	var data = querystring.stringify({
+	  '${2:parameter}' : '${3:parameter value}',
+	});
+	
+	var options = {
+	  host: '${4:host}',
+	  port: '80',
+	  path: '/${5:path}',
+	  method: 'POST',
+	  headers: {
+	    'Content-Type': 'application/x-www-form-urlencoded',
+	    'Content-Length': data.length
+	  }
+	};
+	
+	var req = requestInterface.request(options, function(response) {
+	  response.setEncoding('utf8');
+	  response.on('data', function (result) {
+	    ${6:process the result}
+	  });
+	});
+	
+	req.write(data);
+	req.end();
+
+snippet nmc
+	var mc = require('mc');
+	var client = new mc.Client([127.0.0.1]);
+	client.connect(function(err) {
+	
+	  client.get(key, function(err, data) {
+	    // data[key]
+	  });
+	
+	  client.set(key, value, {exptime: 3600}, function(err, data) {
+	  });
+	
+	});
