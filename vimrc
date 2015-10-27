@@ -20,6 +20,11 @@
 " ------------------------------------------------------------------------------
 
 " ==============================================================================
+" VARIABLES
+" ==============================================================================
+let working_folder=fnamemodify(resolve(expand('<sfile>:p')), ':h')
+
+" ==============================================================================
 " CUSTOM FUNCTIONS
 " ==============================================================================
 function PHPDebug()
@@ -254,7 +259,7 @@ let g:syntastic_check_on_open=1
 
 " jshint
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_jshint_args = "--config " . fnamemodify(resolve(expand('<sfile>:p')), ':h') . "/jshintrc"
+let g:syntastic_javascript_jshint_args = "--config " . working_folder . "/jshintrc"
 
 " ******************************************************************************
 " vim-javascript
@@ -286,7 +291,7 @@ imap <C-a> <CR><Esc>O
 " ******************************************************************************
 
 " Locate the .tern-project file.
-let b:ternProjectDir = $HOME . "/.vim/"
+let b:ternProjectDir = working_folder . "/vim/"
 
 " Use keyboard shorcuts.
 let g:tern_map_keys = 1
@@ -327,7 +332,7 @@ let g:tern_show_argument_hints='on_hold'
 " ******************************************************************************
 
 " Define the directory for the templates
-let g:pdv_template_dir = $HOME ."/.vim/doc-templates"
+let g:pdv_template_dir = working_folder ."/vim/doc-templates"
 
 " @shortcut <C-F7>
 " Apply PHP Documentor
@@ -340,7 +345,7 @@ autocmd FileType php nmap <C-F7> :call pdv#DocumentWithSnip()<CR>
 " ****************************************************************************=*=n
 
 " Customized code snippets folder
-let g:UltiSnipsSnippetsDir = $HOME . "/.vim/snippets"
+let g:UltiSnipsSnippetsDir = working_folder . "/vim/snippets"
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 " ******************************************************************************
