@@ -43,8 +43,8 @@ sudo npm install -g jshint
 **Note:** If you want to use an alternative, you would need to modify in the `vimrc` file the `syntastic` section:
 
 ```
-let g:syntastic_javascript_checkers = ['jshint']                                                                  
-let g:syntastic_javascript_jshint_args = '--config $PWD/vim/jshintrc'
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_jshint_args = "--config " . working_folder . "/jshintrc"
 ```
 
 ## Setup
