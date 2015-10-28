@@ -253,6 +253,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_php_checkers=['']
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=5
 
 " check for errors on file open"
 let g:syntastic_check_on_open=1
@@ -400,4 +401,11 @@ autocmd FileType php nmap <C-F5> exec PHPDebug()
 nmap <F8> :TagbarToggle<CR>
 set tags=./tags,tags;$HOME
 
-:let g:syntastic_loc_list_height=5
+
+" ******************************************************************************
+" Integration with ag
+"
+" A code-searching tool similar to ack, but faster
+" @see https://github.com/ggreer/the_silver_searcher
+" ******************************************************************************
+let g:ackprg="ag --vimgrep"
