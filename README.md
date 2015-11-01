@@ -28,7 +28,7 @@ It contains the following plugins:
 ## Requirements
 
 ```
-sudo apt-get install -y curl cmake python-dev git
+sh configure.sh
 ```
 
 ### Optional: Install Node.js for javascript oriented IDE
