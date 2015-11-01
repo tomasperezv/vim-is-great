@@ -399,8 +399,6 @@ autocmd FileType php nmap <C-F5> exec PHPDebug()
 
 " https://github.com/majutsushi/tagbar
 nmap <F8> :TagbarToggle<CR>
-set tags=./tags,tags;$HOME
-
 
 " ******************************************************************************
 " Integration with ag
@@ -409,3 +407,10 @@ set tags=./tags,tags;$HOME
 " @see https://github.com/ggreer/the_silver_searcher
 " ******************************************************************************
 let g:ackprg="ag --vimgrep"
+
+" ******************************************************************************
+" Open tag under cursor in new tab
+" @see http://stackoverflow.com/questions/563616/vimctags-tips-and-tricks
+" @shortcut <C-\>
+" ******************************************************************************
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>"
