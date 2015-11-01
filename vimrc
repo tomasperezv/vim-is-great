@@ -414,3 +414,13 @@ let g:ackprg="ag --vimgrep"
 " @shortcut <C-\>
 " ******************************************************************************
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>"
+
+" ******************************************************************************
+" Easy tags
+" @see https://github.com/xolox/vim-easytags
+" ******************************************************************************
+let g:easytags_opts = ["--options=" . working_folder . "/ctags"]
+let g:easytags_cmd = '/usr/bin/ctags'
+let g:easytags_file = "ctags"
+let g:easytags_dynamic_files = 1
+set tags=./ctags,tags;$HOME

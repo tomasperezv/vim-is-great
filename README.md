@@ -22,6 +22,8 @@ It contains the following plugins:
 - https://github.com/marijnh/tern_for_vim.git
 - https://github.com/majutsushi/tagbar.git
 - https://github.com/mileszs/ack.vim
+- https://github.com/xolox/vim-easytags
+- https://github.com/xolox/vim-misc
 
 ## Requirements
 
