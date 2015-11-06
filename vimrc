@@ -188,8 +188,8 @@ colorscheme distinguished
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " @shortcut <C-t>
-" Shortcut to open NERDTree
-map <C-t> :NERDTreeToggle<CR>
+" Shortcut to open NERDTreeTabs
+map <C-t> :NERDTreeTabsToggle<CR>
 
 " @shortcut :bp
 " NERDtree doesn't offer a way to move to the previous opened file.
