@@ -11,3 +11,6 @@ cd vim/bundle/tern_for_vim
 npm install
 cd -
 mkdir vim/tmp
+
+# Set vim as default system editor
+sudo update-alternatives --config editor
