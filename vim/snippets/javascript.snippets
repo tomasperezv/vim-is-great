@@ -252,8 +252,9 @@ snippet nserver
 	var http = require('http');
 	http.createServer(function(req, res) {
 	  var remoteAddress = req.connection.remoteAddress;
-	    res.writeHead(200, {'Content-Type': 'application/json'});
-	    res.write(JSON.stringify({}));
+	  res.writeHead(200, {'Content-Type': 'application/json'});
+	  res.write(JSON.stringify({}));
+	  res.end();
 	}).listen(${1:port});
 
 snippet nevents
