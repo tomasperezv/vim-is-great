@@ -77,10 +77,6 @@ autocmd FileType php set sw=4 ts=4 smarttab autoindent smartindent copyindent
 " Indentation for less
 au BufNewFile,BufRead *.less set filetype=css
 
-" show a full list when hitting tab
-" looking for files.
-set wildmode=list:longest,full
-
 " show tab chars with ...>
 set list listchars=tab:»·,trail:·
 
@@ -112,11 +108,6 @@ set ignorecase
 " @shortcut ,/
 nmap <silent> ,/ :nohlsearch<CR>
 
-" Ignores files matching the pattern when using |wildcards| in Ex-commands that
-" take a filename, or in expand(), glob() and globpath().
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.git
-set wildignore+=.*
-
 " @shortcut ,u
 " underscore to camel case
 " http://vim.wikia.com/wiki/CamelCase_to_under_lined_and_vice_versa
@@ -146,6 +137,27 @@ autocmd GUIEnter * set visualbell t_vb=
 
 " @shortcut <C-x>
 " Decrement current selected number.
+
+" ==============================================================================
+" Completion
+" @see http://vim.wikia.com/wiki/Great_wildmode/wildmenu_and_console_mouse
+" ==============================================================================
+
+" Show a full list when hitting tab looking for files
+set wildmode=list:longest,full
+
+" Enables a menu at the bottom of the vim window
+set wildmenu
+
+" File matching patterns that are ignored in wildcards (filenames, expand, glob and globpath)
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.git
+set wildignore+=*.png,*.jpg,*.gif
+set wildignore=*.o,*.obj,*~
+set wildignore+=*sass-cache*
+set wildignore+=node_modules/**
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
 
 " ==============================================================================
 " PLUGINS
