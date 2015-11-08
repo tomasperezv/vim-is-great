@@ -138,6 +138,11 @@ autocmd GUIEnter * set visualbell t_vb=
 " @shortcut <C-x>
 " Decrement current selected number.
 
+" Start scrolling when we're 8 lines away from margins
+set scrolloff=3
+set sidescrolloff=5
+set sidescroll=1
+
 " ==============================================================================
 " Completion
 " @see http://vim.wikia.com/wiki/Great_wildmode/wildmenu_and_console_mouse
