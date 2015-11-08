@@ -230,12 +230,21 @@ map <C-t> :NERDTreeTabsToggle<CR>
 
 " @shortcut i
 " Open selected file in a new horizontal split
+" Note: use g as in gi for preview split
 
 " @shortcut s
 " Open selected file in a new vertical split
+" Note: use g as in gs for preview split
 
 " @shortcut I
 " Open Toggle hidden files
+"
+
+" @shortcut T
+" Open New tab silently
+
+" @shortcut A
+" Maximize NERDTree
 
 " Strange characters in NERDTree
 " @see http://superuser.com/questions/387777/what-could-cause-strange-characters-in-vim
@@ -265,6 +274,9 @@ let g:NERDTreeDirArrows=0
 " Enable tab lines, and display number
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
+
+" Show only tabs, not buffers
+let g:airline#extensions#tabline#show_buffers = 0
 
 " Display date and time
 let g:airline_section_y = airline#section#create(['ffenc', ' ', '%{strftime("%d/%m/%y %H:%M")}'])
