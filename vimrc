@@ -13,10 +13,11 @@
 " 2) GENERAL VIM CONFIGURATION
 " 3) PLUGINS CONFIGURATION
 "
-" - Comments syntax
+" - Comments annotations syntax
 " @plugin [PLUGIN NAME] -> begin of configuration for a plugin
 " @shortcut [SHORTCUT] -> keyboard shortcut definition
 " @see [URL]
+" @command [COMMAND NAME] -> represents a command e.g. 'retab'
 " ------------------------------------------------------------------------------
 
 " ==============================================================================
@@ -163,6 +164,13 @@ set wildignore+=node_modules/**
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=*.gem
+
+" ==============================================================================
+" COMMANDs
+" ==============================================================================
+
+" @command retab
+" Convert current file to new tab settings (e.g. tabs to spaces)
 
 " ==============================================================================
 " PLUGINS
