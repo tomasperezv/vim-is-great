@@ -228,6 +228,15 @@ map <C-t> :NERDTreeTabsToggle<CR>
 " @shortcut r
 " Refresh current node.
 
+" @shortcut i
+" Open selected file in a new horizontal split
+
+" @shortcut s
+" Open selected file in a new vertical split
+
+" @shortcut I
+" Open Toggle hidden files
+
 " Strange characters in NERDTree
 " @see http://superuser.com/questions/387777/what-could-cause-strange-characters-in-vim
 let g:NERDTreeDirArrows=0
