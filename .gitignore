@@ -1,2 +1,3 @@
-./vim/tmp
+vim/tmp
+vim/doc/tags
 node_modules
