@@ -348,8 +348,16 @@ let g:tern_map_keys = 1
 let g:tern_show_argument_hints='on_hold'
 
 " Note: <LocalLeader> corresponds to the  key "\"
-" @shortcut <LocalLeader><td>
+" @shortcut <LocalLeader><tD>
 " TernDoc
+
+" Override the default shortcut for TernDef
+" @shortcut <LocalLeader><td>
+" TernDef
+nmap <LocalLeader>td :TernDef<CR>
+
+" @shortcut <LocalLeader><ti>
+" TernDef
 
 " @shortcut <LocalLeader><tt>
 " TernType
@@ -481,7 +489,8 @@ let g:easytags_languages = {
 \}
 
 let g:easytags_cmd = '/usr/bin/ctags'
-let g:easytags_file = "ctags"
+let g:easytags_file = "easytags"
 let g:easytags_dynamic_files = 1
 let g:easytags_async = 1
 let g:easytags_events = ['BufWritePost', 'BufReadPost']
+set tags=./easytags,tags;$HOME
