@@ -73,8 +73,10 @@ autocmd FileType html setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType css setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType handlebars setlocal ts=2 sw=2 expandtab smartindent
 
-" Indentation for PHP
-autocmd FileType php set sw=4 ts=4 smarttab autoindent smartindent copyindent
+" Indentation and omnisearch for PHP
+autocmd FileType php setlocal ts=4 sw=4 expandtab smartindent
+filetype plugin on
+au FileType php set omnifunc=phpcomplete#CompletePHP
 
 " Indentation for less
 au BufNewFile,BufRead *.less set filetype=css
