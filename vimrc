@@ -466,13 +466,7 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>"
 " Easy tags
 " @see https://github.com/xolox/vim-easytags
 " ******************************************************************************
-let g:easytags_opts = ["--options=" . working_folder . "/ctags"]
-let g:easytags_cmd = '/usr/bin/ctags'
-let g:easytags_file = "ctags"
-let g:easytags_dynamic_files = 1
-let g:easytags_async = 1
-let g:easytags_events = ['BufWritePost']
-set tags=./ctags,tags;$HOME
+"let g:easytags_opts = ["--options=" . working_folder . "/ctags"]
 
 " Use jsctags for javascript files
 " @see https://github.com/xolox/vim-easytags/issues/92
@@ -485,3 +479,9 @@ let g:easytags_languages = {
 \       'recurse_flag': '-R'
 \   }
 \}
+
+let g:easytags_cmd = '/usr/bin/ctags'
+let g:easytags_file = "ctags"
+let g:easytags_dynamic_files = 1
+let g:easytags_async = 1
+let g:easytags_events = ['BufWritePost', 'BufReadPost']
