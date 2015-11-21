@@ -481,10 +481,15 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>"
 let g:easytags_languages = {
 \   'javascript': {
 \     'cmd': working_folder . "/node_modules/jsctags/bin/jsctags",
-\       'args': [],
-\       'fileoutput_opt': '-f',
-\       'stdout_opt': '-f-',
-\       'recurse_flag': '-R'
+\     'args': [],
+\     'fileoutput_opt': '-f',
+\     'stdout_opt': '-f-',
+\     'recurse_flag': '-R'
+\   },
+\   'php': {
+\     'cmd': working_folder . "/bin/ctags",
+\     'args': ['-R'],
+\     'recurse_flag': '-R'
 \   }
 \}
 

@@ -73,3 +73,6 @@
 [submodule "vim/snippets"]
 	path = vim/snippets
 	url = git@github.com:tomasperezv/javascript-snippets.git
+[submodule "vim/bundle/phpcomplete"]
+	path = vim/bundle/phpcomplete
+	url = git@github.com:shawncplus/phpcomplete.vim.git
