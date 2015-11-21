@@ -7,6 +7,7 @@
 " - Changelog
 " 2014-03-15 version 0.1.1 Full rewrite from the scratch.
 " 2015-10-25 version 0.2 Repo moved to a separate project.
+" 2015-11-21 version 0.3 Javascript snippets moved to a separate module.
 "
 " - Structure:
 " 1) CUSTOM FUNCTIONS
@@ -469,4 +470,18 @@ let g:easytags_opts = ["--options=" . working_folder . "/ctags"]
 let g:easytags_cmd = '/usr/bin/ctags'
 let g:easytags_file = "ctags"
 let g:easytags_dynamic_files = 1
+let g:easytags_async = 1
+let g:easytags_events = ['BufWritePost']
 set tags=./ctags,tags;$HOME
+
+" Use jsctags for javascript files
+" @see https://github.com/xolox/vim-easytags/issues/92
+let g:easytags_languages = {
+\   'javascript': {
+\     'cmd': working_folder . "/node_modules/jsctags/bin/jsctags",
+\       'args': [],
+\       'fileoutput_opt': '-f',
+\       'stdout_opt': '-f-',
+\       'recurse_flag': '-R'
+\   }
+\}

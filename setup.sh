@@ -12,5 +12,8 @@ npm install
 cd -
 mkdir vim/tmp
 
+# Install npm dependencies (e.g. jsctags)
+npm install
+
 # Set vim as default system editor
 sudo update-alternatives --config editor
