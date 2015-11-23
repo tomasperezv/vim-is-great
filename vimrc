@@ -403,7 +403,7 @@ autocmd FileType php nmap <C-F7> :call pdv#DocumentWithSnip()<CR>
 " ****************************************************************************=*=n
 
 " Customized code snippets folder
-let g:UltiSnipsSnippetsDir = working_folder . "/vim/snippets/src"
+let g:UltiSnipsSnippetDirectories=[working_folder.'/vim/snippets/src/']
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 " ******************************************************************************
