@@ -466,6 +466,36 @@ nmap <F8> :TagbarToggle<CR>
 let g:ackprg="ag --vimgrep"
 
 " ******************************************************************************
+" Encryption
+"
+" @see https://github.com/tomasperezv/vimcrypt
+" ******************************************************************************
+set cm=blowfish2
+
+" Transparent editing of gpg files for symmetric encryption.
+" Forked and modified from an original implementation by Wouter Hanegraaff.
+" @see http://vim.wikia.com/wiki/Encryption
+augroup encrypted
+  au!
+
+  " Avoid writing to ~/.viminfo while editing
+  autocmd BufReadPre,FileReadPre *.gpg set viminfo=
+  autocmd BufReadPre,FileReadPre *.gpg set noswapfile noundofile nobackup
+  autocmd BufReadPre,FileReadPre *.gpg set bin
+  autocmd BufReadPre,FileReadPre *.gpg let ch_save = &ch|set ch=2
+
+  " Switch to normal mode for editing
+  autocmd BufReadPost,FileReadPost *.gpg '[,']!gpg --decrypt --no-use-agent 2> /dev/null
+  autocmd BufReadPost,FileReadPost *.gpg set nobin
+  autocmd BufReadPost,FileReadPost *.gpg let &ch = ch_save|unlet ch_save
+  autocmd BufReadPost,FileReadPost *.gpg execute ":doautocmd BufReadPost " . expand("%:r")
+
+  " Encrypt text before writing
+  autocmd BufWritePre,FileWritePre *.gpg '[,']!gpg --armor --symmetric --no-use-agent --yes --cipher-algo AES256 2>/dev/null
+  autocmd BufWritePost,FileWritePost *.gpg u
+augroup END
+
+" ******************************************************************************
 " Open tag under cursor in new tab
 " @see http://stackoverflow.com/questions/563616/vimctags-tips-and-tricks
 " @shortcut <C-\>
