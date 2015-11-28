@@ -466,6 +466,17 @@ nmap <F8> :TagbarToggle<CR>
 let g:ackprg="ag --vimgrep"
 
 " ******************************************************************************
+" Notes
+" ******************************************************************************
+function! Notes()
+  let id = input('Enter file id: ')
+  call inputsave()
+  call inputrestore()
+  let filename = strftime("%Y%m%d") . '_' . id . '.gpg'
+  execute "e " . filename
+endfunction
+
+" ******************************************************************************
 " Encryption
 "
 " @see https://github.com/tomasperezv/vimcrypt
