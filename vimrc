@@ -481,7 +481,7 @@ endfunction
 "
 " @see https://github.com/tomasperezv/vimcrypt
 " ******************************************************************************
-set cm=blowfish2
+set cryptmethod=blowfish
 
 " Transparent editing of gpg files for symmetric encryption.
 " Forked and modified from an original implementation by Wouter Hanegraaff.
