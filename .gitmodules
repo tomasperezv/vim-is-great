@@ -82,3 +82,12 @@
 [submodule "vim/bundle/vim-bundler"]
 	path = vim/bundle/vim-bundler
 	url = git@github.com:tpope/vim-bundler.git
+[submodule "vim/bundle/vim-coffee-script"]
+	path = vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/bundle/tern_for_vim_coffee"]
+	path = vim/bundle/tern_for_vim_coffee
+	url = https://github.com/othree/tern_for_vim_coffee.git
+[submodule "vim/bundle/vitality"]
+	path = vim/bundle/vitality
+	url = git@github.com:sjl/vitality.vim.git

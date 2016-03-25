@@ -47,6 +47,9 @@ set encoding=utf-8 nobomb
 " Autoreload .vimrc automatically when it's saved.
 au! BufWritePost .vimrc source %
 
+" Auto save on focus lost
+au FocusLost * :w
+
 " Display line numbers by default
 set number
 
@@ -69,6 +72,7 @@ set hlsearch
 
 " Indentation for Javascript
 autocmd FileType javascript setlocal ts=2 sw=2 expandtab smartindent
+autocmd FileType coffee setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType html setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType css setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType handlebars setlocal ts=2 sw=2 expandtab smartindent
@@ -190,6 +194,7 @@ set wildignore+=*.gem
 
 execute pathogen#infect()
 syntax on
+syntax enable
 filetype plugin indent on
 execute pathogen#helptags()
 
@@ -542,3 +547,9 @@ let g:easytags_dynamic_files = 1
 let g:easytags_async = 1
 let g:easytags_events = ['BufWritePost', 'BufReadPost']
 set tags=./easytags,tags;$HOME
+
+
+" *****************************************************************************
+" Make sure vitality is always enabled and works with terminator
+" *****************************************************************************
+let g:vitality_always_assume_iterm = 1
