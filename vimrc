@@ -542,7 +542,7 @@ let g:easytags_languages = {
 \}
 
 let g:easytags_cmd = '/usr/bin/ctags'
-let g:easytags_file = "easytags"
+let g:easytags_file = "vim_easytags"
 let g:easytags_dynamic_files = 1
 let g:easytags_async = 1
 let g:easytags_events = ['BufWritePost', 'BufReadPost']

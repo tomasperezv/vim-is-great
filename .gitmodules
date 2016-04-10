@@ -49,6 +49,7 @@
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = git@github.com:Valloric/YouCompleteMe.git
+	ignore = dirty
 [submodule "vim/bundle/tern_for_vim"]
 	path = vim/bundle/tern_for_vim
 	url = git@github.com:marijnh/tern_for_vim.git
@@ -91,3 +92,4 @@
 [submodule "vim/bundle/vitality"]
 	path = vim/bundle/vitality
 	url = git@github.com:sjl/vitality.vim.git
+	ignore = dirty
