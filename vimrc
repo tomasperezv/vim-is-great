@@ -48,7 +48,7 @@ set encoding=utf-8 nobomb
 au! BufWritePost .vimrc source %
 
 " Auto save on focus lost
-au FocusLost * :w
+au FocusLost * silent! :w
 
 " Display line numbers by default
 set number
