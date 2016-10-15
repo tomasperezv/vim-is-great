@@ -74,6 +74,8 @@ set hlsearch
 autocmd FileType javascript setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType coffee setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType html setlocal ts=2 sw=2 expandtab smartindent
+autocmd FileType erb setlocal ts=2 sw=2 expandtab smartindent
+autocmd FileType html.erb setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType css setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType handlebars setlocal ts=2 sw=2 expandtab smartindent
 
@@ -219,6 +221,16 @@ colorscheme distinguished
 
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Open NerdTree by default if no file specified
+" @see http://stackoverflow.com/questions/1759737/auto-open-nerdtree-in-vim
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+
+autocmd VimEnter * call StartUp()
 
 " @shortcut <C-t>
 " Shortcut to open NERDTreeTabs
@@ -546,8 +558,7 @@ let g:easytags_file = "vim_easytags"
 let g:easytags_dynamic_files = 1
 let g:easytags_async = 1
 let g:easytags_events = ['BufWritePost', 'BufReadPost']
-set tags=./easytags,tags;$HOME
-
+set tags=./vim_easytags,tags;$HOME
 
 " *****************************************************************************
 " Make sure vitality is always enabled and works with terminator
