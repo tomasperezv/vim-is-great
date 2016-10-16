@@ -93,3 +93,6 @@
 	path = vim/bundle/vitality
 	url = git@github.com:sjl/vitality.vim.git
 	ignore = dirty
+[submodule "vim/bundle/vim-flow"]
+	path = vim/bundle/vim-flow
+	url = git://github.com/facebook/vim-flow.git
