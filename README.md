@@ -35,7 +35,7 @@ sh configure.sh
 ### Optional: Install Node.js for javascript oriented IDE
 
 ```
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 ```
 
 ### Optional: Install `jshint` for `syntastic` checker
