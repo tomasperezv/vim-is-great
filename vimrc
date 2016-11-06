@@ -79,6 +79,9 @@ autocmd FileType html.erb setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType css setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType handlebars setlocal ts=2 sw=2 expandtab smartindent
 
+" Fix indentation
+nmap <C-I> :setlocal ts=2 sw=2 expandtab smartindent<CR>
+
 " Indentation and omnisearch for PHP
 autocmd FileType php setlocal ts=4 sw=4 expandtab smartindent
 filetype plugin on
@@ -324,9 +327,8 @@ let g:syntastic_loc_list_height=5
 " check for errors on file open"
 let g:syntastic_check_on_open=1
 
-" jshint
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_jshint_args = "--config " . working_folder . "/jshintrc"
+" eslint
+let g:syntastic_javascript_checkers = ['eslint']
 
 " ******************************************************************************
 " vim-javascript
