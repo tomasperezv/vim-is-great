@@ -90,6 +90,10 @@ au FileType php set omnifunc=phpcomplete#CompletePHP
 " Indentation for less
 au BufNewFile,BufRead *.less set filetype=css
 
+" Auto format
+au BufRead,BufNewFile *.md setlocal formatoptions=atql textwidth=72 wrapmargin=0 breakat=^I!@*-+;:,./?
+au BufRead,BufNewFile *.txt setlocal formatoptions=atql textwidth=72 wrapmargin=0 breakat=^I!@*-+;:,./?
+
 " show tab chars with ...>
 set list listchars=tab:»·,trail:·
 
@@ -329,6 +333,7 @@ let g:syntastic_check_on_open=1
 
 " eslint
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 " ******************************************************************************
 " vim-javascript
