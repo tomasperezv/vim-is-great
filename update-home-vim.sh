@@ -5,4 +5,4 @@
 # @see https://github.com/tomasperezv/vim-is-great
 # -----------------------------------------------------------------------------
 ln -s $PWD/vimrc $HOME/.vimrc
-ln -s $PWD/vim $HOME/vim
+ln -s $PWD/vim $HOME/.vim
