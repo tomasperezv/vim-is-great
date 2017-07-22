@@ -35,20 +35,20 @@ sh configure.sh
 ### Optional: Install Node.js for javascript oriented IDE
 
 ```
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 ```
 
-### Optional: Install `jshint` for `syntastic` checker
+### Optional: Install `eslint` for `syntastic` checker
 
 ```
-sudo npm install -g jshint
+sudo npm install -g eslint
 ```
 
 **Note:** If you want to use an alternative, you would need to modify in the `vimrc` file the `syntastic` section:
 
 ```
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_jshint_args = "--config " . working_folder . "/jshintrc"
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_jshint_args = "--config " . working_folder . "/.eslintrc"
 ```
 
 ## Setup
