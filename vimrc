@@ -27,14 +27,6 @@
 let working_folder=fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 " ==============================================================================
-" CUSTOM FUNCTIONS
-" ==============================================================================
-function PHPDebug()
-  :VdebugStart
-  :!php -d xdebug.remote_autostart=On -d xdebug.idekey=VIM -d xdebug.remote_host=localhost %:p
-endfunction
-
-" ==============================================================================
 " GENERAL VIM CONFIGURATION
 " ==============================================================================
 set fileformat=unix
@@ -72,20 +64,13 @@ set hlsearch
 
 " Indentation for Javascript
 autocmd FileType javascript setlocal ts=2 sw=2 expandtab smartindent
-autocmd FileType coffee setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType html setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType erb setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType html.erb setlocal ts=2 sw=2 expandtab smartindent
 autocmd FileType css setlocal ts=2 sw=2 expandtab smartindent
-autocmd FileType handlebars setlocal ts=2 sw=2 expandtab smartindent
 
 " Fix indentation
 nmap <C-I> :setlocal ts=2 sw=2 expandtab smartindent<CR>
-
-" Indentation and omnisearch for PHP
-autocmd FileType php setlocal ts=4 sw=4 expandtab smartindent
-filetype plugin on
-au FileType php set omnifunc=phpcomplete#CompletePHP
 
 " Indentation for less
 au BufNewFile,BufRead *.less set filetype=css
@@ -321,9 +306,8 @@ let g:airline_section_y = airline#section#create(['ffenc', ' ', '%{strftime("%d/
 " calls |:SyntasticCheck|
 let g:syntastic_mode_map = { 'mode': 'active',
 	\ 'active_filetypes': ['js', 'php'],
-	\ 'passive_filetypes': ['puppet'] }
+	\ 'passive_filetypes': [] }
 
-let g:syntastic_php_checkers=['']
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
@@ -416,10 +400,6 @@ nmap <LocalLeader>td :TernDef<CR>
 " Define the directory for the templates
 let g:pdv_template_dir = working_folder ."/vim/doc-templates"
 
-" @shortcut <C-F7>
-" Apply PHP Documentor
-autocmd FileType php nmap <C-F7> :call pdv#DocumentWithSnip()<CR>
-
 " ******************************************************************************
 " Ultisnips
 " The ultimate snippet solution for Vim.
@@ -429,54 +409,6 @@ autocmd FileType php nmap <C-F7> :call pdv#DocumentWithSnip()<CR>
 " Customized code snippets folder
 let g:UltiSnipsSnippetDirectories=[working_folder.'/vim/snippets/src/']
 let g:UltiSnipsExpandTrigger="<c-j>"
-
-" ******************************************************************************
-" VDebug
-" A powerful, fast, multi-language debugger for Vim
-" @see https://github.com/joonty/vdebug
-" @see https://github.com/joonty/vdebug/blob/master/doc/Vdebug.txt
-" ******************************************************************************
-
-" Options required in the php.ini file
-" zend_extension=/path/to/xdebug.so
-" xdebug.remote_enable=on
-" xdebug.remote_handler=dbgp
-" xdebug.remote_host=localhost
-" xdebug.remote_port=9000
-
-" @shortcut <F5>
-" Run.
-
-" @shortcut <F2>
-" Step over.
-
-" @shortcut <F3>
-" Step in.
-
-" @shortcut <F4>
-" Step out.
-
-" @shortcut <F9>
-" Run to cursor, without setting a hard breakpoint.
-
-" @shortcut <F7>
-" Detach.
-
-" @shortcut <F6>
-" Stop/close.
-
-" @shortcut <F10>
-" Set/Remove breakpoint.
-
-" Debug PHP client script
-" php -dxdebug.remote_autostart=On -dxdebug.idekey=VIM -dxdebug.remote_host=localhost script.php
-
-" Debug PHP browser script
-" Pass XDEBUG_SESSION_START=VIM
-
-" Debug the current file opened in the command line
-" @shortcut <C-F5>
-autocmd FileType php nmap <C-F5> exec PHPDebug()
 
 " https://github.com/majutsushi/tagbar
 nmap <F8> :TagbarToggle<CR>

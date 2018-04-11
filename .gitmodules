@@ -34,9 +34,6 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
-[submodule "vim/bundle/vdebug"]
-	path = vim/bundle/vdebug
-	url = git@github.com:joonty/vdebug.git
 [submodule "vim/bundle/vim-hack"]
 	path = vim/bundle/vim-hack
 	url = git@github.com:hhvm/vim-hack.git
@@ -74,9 +71,6 @@
 [submodule "vim/snippets"]
 	path = vim/snippets
 	url = git@github.com:tomasperezv/javascript-snippets.git
-[submodule "vim/bundle/phpcomplete"]
-	path = vim/bundle/phpcomplete
-	url = git@github.com:shawncplus/phpcomplete.vim.git
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
 	url = git@github.com:tpope/vim-rails.git
