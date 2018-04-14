@@ -11,7 +11,6 @@ It contains the following plugins:
 - https://github.com/bling/vim-airline.git
 - https://github.com/jelera/vim-javascript-syntax.git
 - https://github.com/jistr/vim-nerdtree-tabs
-- https://github.com/joonty/vdebug.git
 - https://github.com/majutsushi/tagbar.git
 - https://github.com/marijnh/tern_for_vim.git
 - https://github.com/mileszs/ack.vim
@@ -20,7 +19,6 @@ It contains the following plugins:
 - https://github.com/pangloss/vim-javascript.git
 - https://github.com/scrooloose/nerdtree.git
 - https://github.com/scrooloose/syntastic.git
-- https://github.com/tobyS/pdv.git
 - https://github.com/tpope/vim-fugitive.git
 - https://github.com/tpope/vim-surround.git
 - https://github.com/xolox/vim-easytags
