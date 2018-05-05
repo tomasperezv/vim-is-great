@@ -337,6 +337,52 @@ let g:javascript_enable_domhtmlcss = 1
 "	3. now you can type <C-a>, it will insert the new line
 imap <C-a> <CR><Esc>O
 
+" ******************************************************************************
+" vim-flow
+" @see https://github.com/flowtype/vim-flow
+" ******************************************************************************
+let g:flow#enable = 0
+
+" ******************************************************************************
+" tern_for_vim
+" In JavaScript files, the package will hook into omni completion to handle
+" autocompletion.
+" @see https://github.com/marijnh/tern_for_vim
+" ******************************************************************************
+
+" Locate the .tern-project file.
+let b:ternProjectDir = working_folder . "/vim/"
+
+" Use keyboard shorcuts.
+let g:tern_map_keys = 1
+
+" Will display argument type hints when the cursor is left over a function.
+let g:tern_show_argument_hints='on_hold'
+
+" Note: <LocalLeader> corresponds to the  key "\"
+" @shortcut <LocalLeader><tD>
+" TernDoc
+
+" Override the default shortcut for TernDef
+" @shortcut <LocalLeader><td>
+" TernDef
+nmap <LocalLeader>td :TernDef<CR>
+
+" @shortcut <LocalLeader><ti>
+" TernDef
+
+" @shortcut <LocalLeader><tt>
+" TernType
+
+" @shortcut <LocalLeader><tb>
+" TernDocBrowse
+
+" @shortcut <LocalLeader><tR>
+" TernRename
+
+" @shortcut <LocalLeader><tr>
+" TernRefs
+
 " @shortcut <C-X><C-O>
 " Launch omni completion.
 
