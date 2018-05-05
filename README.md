@@ -16,6 +16,7 @@ It contains the following plugins:
 - https://github.com/moll/vim-node.git
 - https://github.com/nathanaelkane/vim-indent-guides.git
 - https://github.com/pangloss/vim-javascript.git
+  https://github.com/marijnh/tern_for_vim.git
 - https://github.com/scrooloose/nerdtree.git
 - https://github.com/tpope/vim-fugitive.git
 - https://github.com/tpope/vim-surround.git
@@ -39,6 +40,10 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 ```
 sudo npm install -g eslint
 ```
+
+### Optional: Install `flow` for javascript autocompletion features
+
+``` sudo npm install -g flow-bin ```
 
 ## Setup
 

@@ -84,3 +84,6 @@
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/w0rp/ale
+[submodule "vim/bundle/tern_for_vim"]
+	path = vim/bundle/tern_for_vim
+	url = git@github.com:marijnh/tern_for_vim.git
