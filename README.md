@@ -12,13 +12,11 @@ It contains the following plugins:
 - https://github.com/jelera/vim-javascript-syntax.git
 - https://github.com/jistr/vim-nerdtree-tabs
 - https://github.com/majutsushi/tagbar.git
-- https://github.com/marijnh/tern_for_vim.git
 - https://github.com/mileszs/ack.vim
 - https://github.com/moll/vim-node.git
 - https://github.com/nathanaelkane/vim-indent-guides.git
 - https://github.com/pangloss/vim-javascript.git
 - https://github.com/scrooloose/nerdtree.git
-- https://github.com/scrooloose/syntastic.git
 - https://github.com/tpope/vim-fugitive.git
 - https://github.com/tpope/vim-surround.git
 - https://github.com/xolox/vim-easytags
@@ -36,17 +34,10 @@ sh configure.sh
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 ```
 
-### Optional: Install `eslint` for `syntastic` checker
+### Optional: Install `eslint` for syntax check
 
 ```
 sudo npm install -g eslint
-```
-
-**Note:** If you want to use an alternative, you would need to modify in the `vimrc` file the `syntastic` section:
-
-```
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_jshint_args = "--config " . working_folder . "/.eslintrc"
 ```
 
 ## Setup

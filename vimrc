@@ -8,6 +8,7 @@
 " 2014-03-15 version 0.1.1 Full rewrite from the scratch.
 " 2015-10-25 version 0.2 Repo moved to a separate project.
 " 2015-11-21 version 0.3 Javascript snippets moved to a separate module.
+" 2018-05-05 version 0.4 Replacing syntastic by Ale
 "
 " - Structure:
 " 1) CUSTOM FUNCTIONS
@@ -200,6 +201,16 @@ set omnifunc=syntaxcomplete#Complete
 colorscheme distinguished
 
 " ******************************************************************************
+" deoplete
+"
+" @see https://github.com/Shougo/deoplete.nvim
+" @plugin deoplete
+" ******************************************************************************
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+" ******************************************************************************
 " NERDtree
 "
 " The NERD tree allows you to explore your filesystem and to open files and
@@ -294,30 +305,15 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_section_y = airline#section#create(['ffenc', ' ', '%{strftime("%d/%m/%y %H:%M")}'])
 
 " ******************************************************************************
-" Syntastic
+" Ale
 " Syntax checking plugin for Vim that runs files through external syntax
 " checkers and displays any resulting errors to the user.
-" @see https://github.com/scrooloose/syntastic
-" @plugin syntastic
+" @see https://github.com/w0rp/ale
+" @plugin ale
 " ******************************************************************************
 
-" In active mode, syntastic does automatic checking whenever a buffer is saved or
-" initially opened.  When set to "passive" syntastic only checks when the user
-" calls |:SyntasticCheck|
-let g:syntastic_mode_map = { 'mode': 'active',
-	\ 'active_filetypes': ['js', 'php'],
-	\ 'passive_filetypes': [] }
-
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=5
-
-" check for errors on file open"
-let g:syntastic_check_on_open=1
-
-" eslint
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
+" Enable completion where available.
+let g:ale_completion_enabled = 1
 
 " ******************************************************************************
 " vim-javascript
@@ -340,46 +336,6 @@ let g:javascript_enable_domhtmlcss = 1
 " 	2. it will add the closing bracket: "function() {|}"
 "	3. now you can type <C-a>, it will insert the new line
 imap <C-a> <CR><Esc>O
-
-" ******************************************************************************
-" tern_for_vim
-" In JavaScript files, the package will hook into omni completion to handle
-" autocompletion.
-" @see https://github.com/marijnh/tern_for_vim
-" ******************************************************************************
-
-" Locate the .tern-project file.
-let b:ternProjectDir = working_folder . "/vim/"
-
-" Use keyboard shorcuts.
-let g:tern_map_keys = 1
-
-" Will display argument type hints when the cursor is left over a function.
-let g:tern_show_argument_hints='on_hold'
-
-" Note: <LocalLeader> corresponds to the  key "\"
-" @shortcut <LocalLeader><tD>
-" TernDoc
-
-" Override the default shortcut for TernDef
-" @shortcut <LocalLeader><td>
-" TernDef
-nmap <LocalLeader>td :TernDef<CR>
-
-" @shortcut <LocalLeader><ti>
-" TernDef
-
-" @shortcut <LocalLeader><tt>
-" TernType
-
-" @shortcut <LocalLeader><tb>
-" TernDocBrowse
-
-" @shortcut <LocalLeader><tR>
-" TernRename
-
-" @shortcut <LocalLeader><tr>
-" TernRefs
 
 " @shortcut <C-X><C-O>
 " Launch omni completion.
