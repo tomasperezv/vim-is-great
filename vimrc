@@ -77,7 +77,6 @@ nmap <C-I> :setlocal ts=2 sw=2 expandtab smartindent<CR>
 au BufNewFile,BufRead *.less set filetype=css
 
 " Auto format
-au BufRead,BufNewFile *.md setlocal formatoptions=atql textwidth=72 wrapmargin=0 breakat=^I!@*-+;:,./?
 au BufRead,BufNewFile *.txt setlocal formatoptions=atql textwidth=72 wrapmargin=0 breakat=^I!@*-+;:,./?
 
 " show tab chars with ...>
