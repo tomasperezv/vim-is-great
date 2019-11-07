@@ -394,6 +394,15 @@ function! Notes()
 endfunction
 
 " ******************************************************************************
+" Update encrypted files with last edition date
+" ******************************************************************************
+function! AppendLastMod()
+  let l = line('$')
+  call append(l, ["", "", strftime("Created at %Y-%m-%d %H:%M:%S"), "******************************", ""])
+  1,$ ! gpg --armor --symmetric --no-use-agent --yes --cipher-algo AES256 2>/dev/null
+endfunction
+
+" ******************************************************************************
 " Encryption
 "
 " @see https://github.com/tomasperezv/vimcrypt
@@ -419,7 +428,7 @@ augroup encrypted
   autocmd BufReadPost,FileReadPost *.gpg execute ":doautocmd BufReadPost " . expand("%:r")
 
   " Encrypt text before writing
-  autocmd BufWritePre,FileWritePre *.gpg '[,']!gpg --armor --symmetric --no-use-agent --yes --cipher-algo AES256 2>/dev/null
+  autocmd BufWritePre,FileWritePre *.gpg  ks|call AppendLastMod()|'s
   autocmd BufWritePost,FileWritePost *.gpg u
 augroup END
 
